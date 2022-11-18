@@ -1,4 +1,7 @@
-<?php require_once("config.php") ?>
+<?php 
+    require_once("conexao.php"); 
+    //CRIAR USUÁRIO ADMIN CASO ELE NÃO EXISTA
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

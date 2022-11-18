@@ -6,6 +6,6 @@
     //DADOS PARA O BANDO DE DADOS
     $sevidor    = 'localhost';
     $usuario    = 'root';
-    $senha      = '123456778';
+    $senha      = '12345678';
     $banco      = 'sistema_financeiro';
 ?>
