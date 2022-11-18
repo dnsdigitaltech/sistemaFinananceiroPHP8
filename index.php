@@ -27,7 +27,7 @@
                 <div class="account-wall">
                     <img class="profile-img" src="./img/logo.png"
                         alt="">
-                    <form class="form-signin" method="POST" action="atenticar.php">
+                    <form class="form-signin" method="POST" action="autenticar.php">
                         <input type="email" name="email" class="form-control mb-2" placeholder="E-mail" required autofocus>
                         <input type="password" name="senha" class="form-control mb-2" placeholder="Senha" required>
                         <div class="d-grid gap-2 mt-3"> 
