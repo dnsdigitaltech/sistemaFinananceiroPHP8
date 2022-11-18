@@ -10,7 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         <link href="css/estilo-login.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="account-wall">
@@ -19,7 +19,9 @@
                     <form class="form-signin" method="POST" action="atenticar.php">
                     <input type="email" class="form-control mb-2" placeholder="E-mail" required autofocus>
                     <input type="password" class="form-control mb-2" placeholder="Senha" required>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit"> Entrar</button>                        
+                    <div class="d-grid gap-2 mt-3"> 
+                        <button class="btn btn-primary" type="submit"> Entrar</button>      
+                    </div>                  
                     </form>
                 </div>
             </div>
