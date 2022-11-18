@@ -1,7 +1,9 @@
+<?php require_once("config.php") ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Acessar Sistema</title>
+        <title><?=$nomeSistema?></title>
+        <link href="img/icone.ico" rel="shortcut icon" type="image/x-icon">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- CSS only -->
