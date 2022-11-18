@@ -1,4 +1,5 @@
 <?php 
+    @session_start();
     require_once("conexao.php"); 
 
     $email = $_POST['email'];
@@ -13,6 +14,12 @@
     
     if($totalReg > 0){
         $nivel = $res[0]['nivel'];
+
+        //VARIAVEIS DE SESSÃO
+        $_SESSION['nivelUsuaro']    = $res[0]['nivel'];
+        $_SESSION['nomeUsuaro']     = $res[0]['nome'];
+        $_SESSION['idUsuaro']       = $res[0]['id'];
+
 
         if($nivel == 'Administrador'){
             echo "
