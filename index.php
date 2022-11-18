@@ -28,11 +28,11 @@
                     <img class="profile-img" src="./img/logo.png"
                         alt="">
                     <form class="form-signin" method="POST" action="atenticar.php">
-                    <input type="email" class="form-control mb-2" placeholder="E-mail" required autofocus>
-                    <input type="password" class="form-control mb-2" placeholder="Senha" required>
-                    <div class="d-grid gap-2 mt-3"> 
-                        <button class="btn btn-primary" type="submit"> Entrar</button>      
-                    </div>                  
+                        <input type="email" name="email" class="form-control mb-2" placeholder="E-mail" required autofocus>
+                        <input type="password" name="senha" class="form-control mb-2" placeholder="Senha" required>
+                        <div class="d-grid gap-2 mt-3"> 
+                            <button class="btn btn-primary" type="submit"> Entrar</button>      
+                        </div>                  
                     </form>
                 </div>
             </div>
