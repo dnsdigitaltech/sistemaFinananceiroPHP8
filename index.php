@@ -1,13 +1,15 @@
 <?php 
     require_once("conexao.php"); 
     //CRIAR USUÁRIO ADMIN CASO ELE NÃO EXISTA
-    $query = $pdo("SELECT * FROM usuarios WHERE nivel = 'Administrador'");
-    $res = $query->fetch(PDO::FETCH_ASSOC);
+    $query = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'Administrador'");
+    $res = $query->fetchAll(PDO::FETCH_ASSOC);
     $totalReg = @count($res);
-    $pdo->query("INSERT INTO usuarios SET nome = '$nomeAdmin', email = '$emailAdmin', senha= '12345678', nivel = 'Administrador'");
+    if($totalReg == 0){
+        $pdo->query("INSERT INTO usuarios SET nome = '$nomeAdmin', email = '$emailAdmin', senha= '12345678', nivel = 'Administrador'");
+    }   
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <title><?=$nomeSistema?></title>
         <link href="img/icone.ico" rel="shortcut icon" type="image/x-icon">

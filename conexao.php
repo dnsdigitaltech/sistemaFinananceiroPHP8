@@ -1,6 +1,6 @@
 <?php 
+    ini_set("display_errors", "on");
     require_once("config.php");
-    
     date_default_timezone_set('America/Sao_Paulo');
 
     try {
