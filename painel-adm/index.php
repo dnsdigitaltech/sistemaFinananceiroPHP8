@@ -1,6 +1,7 @@
 <?php 
     @session_start();
     require_once("../conexao.php"); 
+    require_once("verificar.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,12 +53,11 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?=$_SESSION['nomeUsuaro']?>
+                                    <?=@$_SESSION['nomeUsuaro']?>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#"><?=$_SESSION['nomeUsuaro']?></a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="../../logout.php">Sair</a></li>
+                                    <li><a class="dropdown-item" href="#">Editar Dados
+                                    <li><a class="dropdown-item" href="../logout.php">Sair</a></li>
                                 </ul>
                             </li>
                         </ul>
