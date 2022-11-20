@@ -46,10 +46,23 @@
                         </ul>
                     </li>
                 </ul>
-                <form method="GET" class="d-flex">
-                    <input name="txtBuscar" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <div class="d-flex mr-4">
+                    <img src="../img/user.png" class="img-profile rounded-circle" alt="Usuário" width="40px" height="40px"> 
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?=$_SESSION['nomeUsuaro']?>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#"><?=$_SESSION['nomeUsuaro']?></a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="../../logout.php">Sair</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
             </div>
         </nav>
