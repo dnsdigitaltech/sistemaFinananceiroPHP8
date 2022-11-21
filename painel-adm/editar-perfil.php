@@ -8,9 +8,10 @@
     //VALIDAR EMAIL
     $query = $pdo->query("SELECT * FROM usuarios WHERE email = '$email'");
     $res = $query->fetch(PDO::FETCH_ASSOC);
+    $id_usu = $res['id'];
     $totalReg = count($res);
-    if($totalReg > 0){
-        echo 'Este email já está cadastrado, escolha outro email!';
+    if($totalReg > 0 and $id_usu != $id){
+        echo "Este email já está cadastrado para o usuário {$res['nome']}, escolha outro email!";
         exit();
     }
 

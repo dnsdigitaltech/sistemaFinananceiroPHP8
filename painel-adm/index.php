@@ -57,19 +57,17 @@
                 </ul>
                 <div class="d-flex mr-4">
                     <img src="../img/user.png" class="img-profile rounded-circle" alt="Usuário" width="40px" height="40px"> 
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?=@$nomeUsario?>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a href="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPerfil">Editar Dados
-                                    <li><a class="dropdown-item" href="../logout.php">Sair</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?=@$nomeUsario?>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a href="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPerfil">Editar Dados
+                                <li><a class="dropdown-item" href="../logout.php">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 </div>
             </div>
