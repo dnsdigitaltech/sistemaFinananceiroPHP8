@@ -17,10 +17,10 @@
     $menu2 = 'clientes';
     $menu3 = 'niveis';
     $menu4 = 'usuarios';
-    if(@$_GET['pag'] == ""){
-        $pag = $menu1;
+    if(@$_GET['pagina'] == ""){
+        $pagina = $menu1;
     }else{
-        $pag = $_GET['pag'];
+        $pagina = $_GET['pagina'];
     }    
 ?>
 <!DOCTYPE html>
@@ -44,16 +44,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./?pag=<?=$menu1?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./?pagina=<?=$menu1?>">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cadastros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./?pag=<?=$menu2?>">Clientes</a></li>
-                            <li><a class="dropdown-item" href="./?pag=<?=$menu3?>">Usuários</a></li>
-                            <li><a class="dropdown-item" href="./?pag=<?=$menu4?>">Niveis de Usuários</a></li>
+                            <li><a class="dropdown-item" href="./?pagina=<?=$menu2?>">Clientes</a></li>
+                            <li><a class="dropdown-item" href="./?pagina=<?=$menu4?>">Usuários</a></li>
+                            <li><a class="dropdown-item" href="./?pagina=<?=$menu3?>">Niveis de Usuários</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -87,7 +87,7 @@
 
         <div class="container-fluid">
             <?php
-                require_once($pag.'.php');
+                require_once($pagina.'.php');
             ?>
         </div>
 
