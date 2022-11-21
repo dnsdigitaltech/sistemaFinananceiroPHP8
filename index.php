@@ -31,12 +31,10 @@
                         <input type="password" name="senha" class="form-control mb-2" placeholder="Senha" required>
                         <div class="d-grid gap-2 mt-3"> 
                             <button class="btn btn-primary" type="submit"> Entrar</button>      
-                        </div>                  
+                        </div>               
                     </form>
                 </div>
             </div>
-        </div>
-
-    
+        </div>    
     </body>
 </html>

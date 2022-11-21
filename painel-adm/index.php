@@ -85,7 +85,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="form-perfil">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" name="nome" class="form-control" id="nome" value="<?=$nomeUsario?>" placeholder="Nome">
@@ -98,12 +98,50 @@
                 <label for="senha" class="form-label">Senha</label>
                 <input type="text" name="senha" class="form-control" id="senha" value="<?=$senhaUsario?>" placeholder="Senha">
             </div>
+            <small><div class="mensagem-perfil" align="center"></div></small> 
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-fechar-perfil">Cancelar</button>
         <button type="button" class="btn btn-primary">Editar</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Ajax para inserir ou editar dados -->
+<script type="text/javascript">
+	$("#form-perfil").submit(function () {
+		event.preventDefault();
+		var formData = new FormData(this);
+
+		$.ajax({
+			url: "editar-perfil.php",
+			type: 'POST',
+			data: formData,
+
+			success: function (mensagem) {
+				$('#mensagem-perfil').removeClass()
+				if (mensagem.trim() == "Salvo com Sucesso!") {
+                    //$('#nome').val('');
+                    //$('#cpf').val('');
+                    $('#btn-fechar-perfil').click();
+                    window.location = "index.php?pagina="+pag;
+
+                } else {
+
+                	$('#mensagem-perfil').addClass('text-danger')
+                }
+
+                $('#mensagem-perfil').text(mensagem)
+
+            },
+
+            cache: false,
+            contentType: false,
+            processData: false,
+            
+        });
+
+	});
+</script>
