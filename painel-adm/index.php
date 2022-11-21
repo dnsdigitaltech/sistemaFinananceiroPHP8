@@ -2,6 +2,13 @@
     @session_start();
     require_once("../conexao.php"); 
     require_once("verificar.php");
+    //RECUPERAR DADOS DO USUÁRIO
+    $idUusuario = $_SESSION['idUsuaro'];
+    $query = $pdo->query("SELECT * FROM usuarios WHERE id = $idUusuario");
+    $res = $query->fetch(PDO::FETCH_ASSOC);
+    $nomeUsario     = $res['nome'];
+    $emailUsario    = $res['email'];
+    $senhaUsario    = $res['senha'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -53,7 +60,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?=@$_SESSION['nomeUsuaro']?>
+                                    <?=@$nomeUsario?>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a href="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPerfil">Editar Dados
@@ -81,21 +88,21 @@
         <form>
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
+                <input type="text" name="nome" class="form-control" id="nome" value="<?=$nomeUsario?>" placeholder="Nome">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="email" placeholder="E-mail">
+                <input type="email" name="email" class="form-control" id="email" value="<?=$emailUsario?>" placeholder="E-mail">
             </div>
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="password" name="senha" class="form-control" id="senha" placeholder="Senha">
+                <input type="text" name="senha" class="form-control" id="senha" value="<?=$senhaUsario?>" placeholder="Senha">
             </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Editar</button>
       </div>
     </div>
   </div>
