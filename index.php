@@ -3,9 +3,16 @@
     //CRIAR USUÁRIO ADMIN CASO ELE NÃO EXISTA
     $query = $pdo->query("SELECT * FROM usuarios WHERE nivel = 'Administrador'");
     $res = $query->fetchAll(PDO::FETCH_ASSOC);
-    $totalReg = @count($res);
+    $totalReg = @count($query_nivel);    
     if($totalReg == 0){
         $pdo->query("INSERT INTO usuarios SET nome = '$nomeAdmin', email = '$emailAdmin', senha= '12345678', nivel = 'Administrador'");
+    }   
+    //CRIAR NIVEL ADMIN CASO ELE NÃO EXISTA
+    $query_nivel = $pdo->query("SELECT * FROM niveis WHERE nivel = 'Administrador'");
+    $query_nivel = $query_nivel->fetchAll(PDO::FETCH_ASSOC);
+    $totalRegNivel = @count($query_nivel);
+    if($totalRegNivel == 0){
+        $pdo->query("INSERT INTO niveis SET nivel = 'Administrador'");
     }   
 ?>
 <!DOCTYPE html>

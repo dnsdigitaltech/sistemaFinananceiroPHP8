@@ -11,13 +11,17 @@
     $senhaUsario    = $res['senha'];
     $nivelUsario    = $res['nivel'];
 
-    $pag = @$_GET['pag'];
 
     //MENUS DO PAINEL
     $menu1 = 'home';
     $menu2 = 'clientes';
     $menu3 = 'niveis';
     $menu4 = 'usuarios';
+    if(@$_GET['pag'] == ""){
+        $pag = $menu1;
+    }else{
+        $pag = $_GET['pag'];
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,23 +37,23 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php?pag=<?=$menu1?>"><img class="profile-img" src="../img/logo.png" width=40 alt=""></a>
+                <a class="navbar-brand" href="./?pag=<?=$menu1?>"><img class="profile-img" src="../img/logo.png" width=40 alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php?pag=<?=$menu1?>">Home</a>
+                        <a class="nav-link active" aria-current="page" href="./?pag=<?=$menu1?>">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cadastros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="index.php?pag=<?=$menu2?>">Clientes</a></li>
-                            <li><a class="dropdown-item" href="index.php?pag=<?=$menu3?>">Usuários</a></li>
-                            <li><a class="dropdown-item" href="index.php?pag=<?=$menu4?>">Niveis de Usuários</a></li>
+                            <li><a class="dropdown-item" href="./?pag=<?=$menu2?>">Clientes</a></li>
+                            <li><a class="dropdown-item" href="./?pag=<?=$menu3?>">Usuários</a></li>
+                            <li><a class="dropdown-item" href="./?pag=<?=$menu4?>">Niveis de Usuários</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -83,9 +87,7 @@
 
         <div class="container-fluid">
             <?php
-                if($pag == $menu1){
-                    require_once($menu1.'.php');
-                }
+                require_once($pag.'.php');
             ?>
         </div>
 
