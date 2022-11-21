@@ -9,6 +9,7 @@
     $nomeUsario     = $res['nome'];
     $emailUsario    = $res['email'];
     $senhaUsario    = $res['senha'];
+    $idUsario       = $res['id'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -89,16 +90,17 @@
         <div class="modal-body">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" name="nome" class="form-control" id="nome" value="<?=$nomeUsario?>" placeholder="Nome">
+                    <input type="text" name="nome_usario" class="form-control" id="nome" value="<?=$nomeUsario?>" placeholder="Nome">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" value="<?=$emailUsario?>" placeholder="E-mail">
+                    <input type="email" name="email_usario" class="form-control" id="email" value="<?=$emailUsario?>" placeholder="E-mail">
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="text" name="senha" class="form-control" id="senha" value="<?=$senhaUsario?>" placeholder="Senha">
+                    <input type="text" name="senha_usario" class="form-control" id="senha" value="<?=$senhaUsario?>" placeholder="Senha">
                 </div>
+                <input type="hidden" name="id_usario" value="<?=$idUsario?>">
                 <small><div id="mensagem-perfil" align="center"></div></small>             
             </div>
             <div class="modal-footer">
