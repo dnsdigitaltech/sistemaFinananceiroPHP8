@@ -87,7 +87,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
+        <div class="container-fluid mb-4 mx-4">
             <?php
                 require_once($pagina.'.php');
             ?>
