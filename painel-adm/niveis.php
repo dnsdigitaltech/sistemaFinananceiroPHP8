@@ -6,25 +6,25 @@
 <div class="col-md-12 my-3">
     <a type="button" class="btn btn-dark">Novo Nível</a>    
 </div>
-<div class="tabela">
-    <table id="example" class="table table-hover my-4">
+<div class="tabela bg-light">
+    <table id="example" class="table table-striped table-hover my-4 bg-light">
         <thead>
             <tr>
-                <th>Nome</th>						
+                <th>Nível</th>						
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-                <tr>
-                    <?php 
-                        $query = $pdo->query("SELECT * FROM niveis ORDER BY id DESC");
-                        $niveis = $query->fetchAll(PDO::FETCH_ASSOC);
-                        foreach ($niveis as $key => $nivel) {                        
-                    ?>
+                <?php 
+                    $query = $pdo->query("SELECT * FROM niveis ORDER BY id DESC");
+                    $niveis = $query->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($niveis as $key => $nivel) {                        
+                ?>
+                <tr>                    
                     <td><?=$nivel['nivel'] ?></td>                    
-                    <td>02</td>
-                    <?php }?>
+                    <td>02</td>                    
                 </tr>
+                <?php }?>
         </tbody>
     </table>
 </div>
