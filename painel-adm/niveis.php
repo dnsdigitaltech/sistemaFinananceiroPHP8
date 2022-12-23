@@ -45,7 +45,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <form id="form-perfil">
+      <form id="form">
         <div class="modal-body">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nível</label>
@@ -64,10 +64,4 @@
   </div>
 </div>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#example').DataTable({
-            "ordering": false
-        });
-    } );
-</script>
+<script src="<?= $pagina ?>/scripts.js"></script>
