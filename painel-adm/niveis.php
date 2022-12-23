@@ -22,7 +22,14 @@
                 ?>
                 <tr>                    
                     <td><?=$nivel['nivel'] ?></td>                    
-                    <td>02</td>                    
+                    <td>
+                        <a href="" title="Editar Registro">
+                            <i class="fa-solid fa-pen-to-square text-primary"></i>
+                        </a>
+                        <a href="" title="Excluir Registro">
+                            <i class="fa-solid fa-trash-can text-danger"></i>
+                        </a>
+                    </td>                    
                 </tr>
                 <?php }?>
         </tbody>
