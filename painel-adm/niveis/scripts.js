@@ -9,23 +9,23 @@ $("#form").submit(function () {
     event.preventDefault();
     var formData = new FormData(this);
     $.ajax({
-        url: "inserir.php",
+        url: pag+"/inserir.php",
         type: 'POST',
         data: formData,
 
         success: function (mensagem) {
-            $('#mensagem-perfil').removeClass()
+            $('#mensagem').removeClass()
             if (mensagem.trim() == "Salvo com Sucesso!") {
                 //$('#nome').val('');
                 //$('#cpf').val('');
-                $('#btn-fechar-perfil').click();
-                window.location = "index.php?";
+                $('#btn-fechar').click();
+                window.location = `./?pagina=${pag}`;
 
             } else {
-                $('#mensagem-perfil').addClass('text-danger')
+                $('#mensagem').addClass('text-danger')
             }
 
-            $('#mensagem-perfil').text(mensagem)
+            $('#mensagem').text(mensagem)
 
         },
 

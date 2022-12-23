@@ -56,12 +56,14 @@
                 <small><div id="mensagem" align="center"></div></small>             
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-fechar-perfil">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Editar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btn-fechar">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
         </form>
     </div>
   </div>
 </div>
-
+<script>
+    var pag = "<?=$pagina?>";
+</script>
 <script src="<?= $pagina ?>/scripts.js"></script>
